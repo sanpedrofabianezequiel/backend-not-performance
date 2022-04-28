@@ -1,0 +1,75 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "1.0.0",
+        "title": "Bibleverse",
+        "description": "System Rest Full",
+        "license": {
+            "name": "MIT",
+            "url": "https://opensource.org/licenses/MIT"
+        }
+    },
+    "host":"localhost:8080",
+    "basePath":"",
+    "tags":[
+        {
+            "name":"Book",
+            "description":""
+        }
+    ],
+    "schemes":[
+        "http",
+        "https"
+    ],
+    "consumes":[
+        "application/json"
+    ],
+    "produces":[
+        "application/json"
+    ],
+    "paths":{
+        "/book":{
+            "post":{
+                "tags":[
+                    "Book"
+                ],
+                "summary":"Create a new book",
+                "parameters":[
+                    {
+                        "number":"body",
+                        "name":"body",
+                        "testament":"body",
+                        "description":"Create a new book",
+                        "schema":{
+                            "$ref":"#/definitions/book"
+                        }
+                    }
+                ],
+                "produces":[
+                    "application/json"
+                ],
+                "responses":{
+                    "200":{
+                        "description":"ok",
+                        "schema":{
+                            "$ref":"#/definitions/book"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "book":{
+            "type":"object",
+            "properties":{
+                "name":{
+                    "type":"string"
+                },
+                "verses":{
+                    "type":"string"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.router = void 0;
+var express_1 = require("express");
+var verse_topic_controller_1 = require("../controllers/verse-topic.controller");
+var router = (0, express_1.Router)();
+exports.router = router;
+router.get('/verses/topics/:topicIdentifier', [], verse_topic_controller_1.getVersesTopicIdentifierController);
+router.post('/verses/:idVerse/topics', [], verse_topic_controller_1.postVersesTopicIdentifierController);
+router.delete('/verses/:idVerse/topics/:idTopic', [], verse_topic_controller_1.deleteVersesTopicIdentifierController);
